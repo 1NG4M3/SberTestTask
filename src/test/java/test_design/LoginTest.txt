@@ -1,0 +1,36 @@
+Логин. Негативные кейсы:
+
+===================================================================
+Шаг 1:
+Отправить GET запрос на эндпоинт: 'https://www.mediawiki.org/w/api.php' следующие параметры и значения,
+как query params: 'action=query', 'meta=tokens', 'type=*', 'format=json'.
+
+Результат:
+Вернулся ответ в формате JSON c токенами.
+
+Шаг 2:
+Отправить POST запрос на эндпоинт: 'https://www.mediawiki.org/w/api.php' следующие параметры и значения,
+как query params: 'action=clientlogin', 'format=json'. Добавить в тело запроса 'username' - имя пользователя,
+'password' - пароль, 'loginreturnurl' - url, 'logintoken' - токен, полученный из предыдущего шага (logintoken).
+
+Результат:
+Получено сообщение об ошибке в формате JSON. Поле info содержит следующий текст: 'Invalid CSRF token.'
+
+===================================================================
+Шаг 1:
+Отправить GET запрос на эндпоинт: 'https://www.mediawiki.org/w/api.php' следующие параметры и значения,
+как query params: 'action=query', 'meta=tokens', 'type=*', 'format=json'.
+
+Результат:
+Вернулся ответ в формате JSON c токенами.
+
+Шаг 2:
+Отправить POST запрос на эндпоинт: 'https://www.mediawiki.org/w/api.php' следующие параметры и значения,
+как query params: 'action=clientlogin', 'format=json'. Добавить в тело запроса 'username' - имя пользователя,
+'password' - пароль, 'loginreturnurl' - url, 'logintoken' - токен, полученный из предыдущего шага (logintoken).
+
+Результат:
+Получено сообщение об ошибке в формате JSON. Поле details содержит следующий текст: 'See
+https://test.wikipedia.org/w/api.php for API usage. Subscribe to the mediawiki-api-announce mailing list at &lt;
+https://lists.wikimedia.org/postorius/lists/mediawiki-api-announce.lists.wikimedia.org/&gt;
+for notice of API deprecations and breaking changes.'
